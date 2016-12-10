@@ -16,4 +16,4 @@
 # JAVA_OPTS configuration
 ---
 from_environment: true
-java_opts: -XX:+DisableExplicitGC -XX:+UseG1GC -XX:+UseThreadPriorities -XX:ParallelGCThreads=16 -XX:ConcGCThreads=16 -XX:CompileThreshold=50000 -XX:+OptimizeStringConcat
+java_opts: -XX:+DisableExplicitGC -XX:+UseG1GC -XX:+UseThreadPriorities -XX:ParallelGCThreads=16 -XX:ConcGCThreads=16 -XX:CompileThreshold=50000
