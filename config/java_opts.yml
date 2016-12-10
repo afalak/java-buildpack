@@ -16,4 +16,4 @@
 # JAVA_OPTS configuration
 ---
 from_environment: true
-java_opts: -XX:+DisableExplicitGC -XX:+UseG1GC
+java_opts: -XX:+UseG1GC
