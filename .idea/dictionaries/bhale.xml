@@ -8,6 +8,7 @@
       <w>argv</w>
       <w>atpack</w>
       <w>bootclasspath</w>
+      <w>cacert</w>
       <w>chrystoki</w>
       <w>cklog</w>
       <w>codeclimate</w>
@@ -20,6 +21,7 @@
       <w>dirname</w>
       <w>distapplication</w>
       <w>dnewrelic</w>
+      <w>dotmatch</w>
       <w>enterprisemanager</w>
       <w>etag</w>
       <w>extname</w>

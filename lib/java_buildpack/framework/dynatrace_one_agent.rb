@@ -1,6 +1,6 @@
 # Encoding: utf-8
 # Cloud Foundry Java Buildpack
-# Copyright 2013-2016 the original author or authors.
+# Copyright 2013-2017 the original author or authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 require 'fileutils'
 require 'java_buildpack/component/versioned_dependency_component'
 require 'java_buildpack/framework'
+require 'java_buildpack/util/cache/internet_availability'
 require 'json'
 
 module JavaBuildpack
@@ -35,7 +36,12 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
-        download(@version, @uri) { |file| expand file }
+        JavaBuildpack::Util::Cache::InternetAvailability.instance.available(
+          true, 'The Dynatrace One Agent download location is always accessible'
+        ) do
+          download(@version, @uri) { |file| expand file }
+        end
+
         @droplet.copy_resources
       end
 
