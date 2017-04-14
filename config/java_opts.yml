@@ -16,4 +16,4 @@
 # JAVA_OPTS configuration
 ---
 from_environment: true
-java_opts: -XX:+UseG1GC -Xbootclasspath/p:./alpn-boot-8.1.8.v20160420.jar
+java_opts: -XX:+UseG1GC
