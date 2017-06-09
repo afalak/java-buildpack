@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Cloud Foundry Java Buildpack
 # Copyright 2013-2017 the original author or authors.
 #
@@ -13,8 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Container certificate truststore configuration
----
-version: 2.+
-repository_root: "{default.repository.root}/container-certificate-trust-store"
-enabled: true
+set -e
+
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+eval "$(rbenv init -)"
+
+pushd java-buildpack
+  bundle install --quiet
+  bundle exec rake versions:markdown
+popd

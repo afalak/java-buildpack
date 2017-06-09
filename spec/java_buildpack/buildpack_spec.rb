@@ -1,4 +1,3 @@
-# Encoding: utf-8
 # Cloud Foundry Java Buildpack
 # Copyright 2013-2017 the original author or authors.
 #
@@ -88,11 +87,11 @@ describe JavaBuildpack::Buildpack do
     before do
       allow(JavaBuildpack::Util::ConfigurationUtils)
         .to receive(:load).with('components')
-        .and_return(
-          'containers' => [],
-          'frameworks' => ['JavaBuildpack::Framework::JavaOpts'],
-          'jres'       => []
-        )
+                          .and_return(
+                            'containers' => [],
+                            'frameworks' => ['JavaBuildpack::Framework::JavaOpts'],
+                            'jres'       => []
+                          )
     end
 
     it 'requires files needed for components' do
